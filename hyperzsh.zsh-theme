@@ -2,7 +2,7 @@
 PROMPT='$(_user_host)$(_python_venv)%{$fg[cyan]%}%c $(git_prompt_status)${_return_status}➜ '
 
 # The right-hand prompt
-RPROMPT='$(git_prompt_info)%{$reset_color%}$(git_prompt_short_sha)$(_git_time_since_commit)'
+RPROMPT='$(git_prompt_info)%{$reset_color%}$(git_prompt_short_sha) $(_git_time_since_commit)'
 
 # Prompt with SHA
 # PROMPT='$(_user_host)$(_python_venv)%{$fg[cyan]%}%c ${_return_status}➜ '
@@ -28,8 +28,8 @@ function _python_venv() {
 }
 
 # Format for git_prompt_long_sha() and git_prompt_short_sha()
-ZSH_THEME_GIT_PROMPT_SHA_BEFORE="%{%F{yellow}%}"
-ZSH_THEME_GIT_PROMPT_SHA_AFTER="%{$reset_color%} "
+ZSH_THEME_GIT_PROMPT_SHA_BEFORE=":: %{%F{yellow}%}"
+ZSH_THEME_GIT_PROMPT_SHA_AFTER="%{$reset_color%} ::"
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[green]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%}"
@@ -39,9 +39,9 @@ ZSH_THEME_GIT_PROMPT_CLEAN=" "
 ZSH_THEME_GIT_PROMPT_ADDED="%{$fg[cyan]%}✓ "
 ZSH_THEME_GIT_PROMPT_MODIFIED="%{$fg[yellow]%}△ "
 ZSH_THEME_GIT_PROMPT_DELETED="%{$fg[red]%}✖ "
-ZSH_THEME_GIT_PROMPT_RENAMED="%{$fg[blue]%}➜ "
+ZSH_THEME_GIT_PROMPT_RENAMED="%{$fg[cyan]%}➜ "
 ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg[cyan]%}§ "
-ZSH_THEME_GIT_PROMPT_AHEAD="%{$fg[blue]%}▲ "
+ZSH_THEME_GIT_PROMPT_AHEAD="%{$fg[white]%}▲ "
 
 ZSH_THEME_GIT_TIME_SINCE_COMMIT_SHORT="%{$fg[white]%}"
 ZSH_THEME_GIT_TIME_SHORT_COMMIT_MEDIUM="%{$fg[yellow]%}"
